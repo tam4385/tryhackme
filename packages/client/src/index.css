@@ -31,6 +31,10 @@ body {
   height: 100vh;
 }
 
+.padding-bottom-8 {
+  padding-bottom: 8rem;
+}
+
 .form {
   position: relative;
 }

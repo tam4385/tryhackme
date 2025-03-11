@@ -89,12 +89,33 @@ For larger or more time-intensive changes, you're welcome to outline your ideas 
 ### Write-up
 
 <!-- Write-up/conclusion section -->
+Spent around 3 hours on this test. Was addictive! There is just so much that can be added and changed. 
+
+Performance enhancements:
+- Added indexes to the DB collections on the city, country and hotel names.
+- Filtering logic done on the server side to keep the client clean and avoid heavy lifting.
+- Added a debouncer to not fetch results after each input change event.
+- Ran the search on hotels, cities and countries concurrently for faster results.
+- Would need a more scalable directory structure, but went for more functional JavaScript.
+
+Further enhancements:
+- More of a .env file use for security of config.
+- The folder structure to separate concerns. E.g. removing controller and DB logic from the route.
+- Adding tests. Testing each route with unit tests and mocking/ integration tests.
+- Rate limiting/ load balancing.
+- Validation layer
+- More strict typing
+- Caching system. E.g. frontend could use a context to store fetched data.
+
+There is a lot that can be done to this. Really rate this test for both its simplicity but also unopinionated flexibility. With more time, could really get creative!
 
 _When all the behaviour is implemented, feel free to add some observations or conclusions you like to share in the section_
 
 ### Database structure
 
 #### Hotels Collection
+
+indexed on hotel_name, city and country fields
 
 ```json
 [
@@ -118,6 +139,8 @@ _When all the behaviour is implemented, feel free to add some observations or co
 
 #### Cities Collection
 
+indexed on city
+
 ```json
 [
   { "name": "Auckland" },
@@ -128,6 +151,8 @@ _When all the behaviour is implemented, feel free to add some observations or co
 ```
 
 #### Countries Collection
+
+index added to country
 
 ```json
 [
